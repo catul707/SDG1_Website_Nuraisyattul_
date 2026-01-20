@@ -1,0 +1,284 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f5f1e8; /* Beige */
+    color: #333;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+header {
+    background-color: #c62828; /* Dark Red */
+}
+.sdg-logos {
+    display: flex;
+    gap: 20px;              /* space between logos */
+    justify-content: left; 
+    align-items: left;    /* vertically aligned if needed */
+    margin: 20px 0;         /* spacing above and below */
+}
+
+.sdg-logo {
+    width: 60px;   /* adjust size */
+    height: auto;  /* keep aspect ratio */
+    transition: transform 0.3s;
+}
+
+.sdg-logo:hover {
+    transform: scale(1.1); /* small zoom on hover */
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    height: 75vh;
+    background: linear-gradient(
+        rgba(239, 1, 1, 0.7),
+        rgba(255, 114, 112, 0.7)
+    ),
+    url("../img/food1.jpg") center/cover no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f5f1e8; /* Beige */
+    color: #c62828;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #ffffff;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center; /*centers ALL text inside*/
+}
+
+.content h2 {
+    font-size: 2rem;
+    color: #c62828;
+    margin-bottom: 15px;
+}
+
+.content p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* =========================
+   GALLERY SECTION
+========================= */
+.gallery-section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery-section h2 {
+    font-size: 2.2rem;
+    color: #c62828;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   CAROUSEL
+========================= */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carousel img {
+    width: 420px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Container to keep buttons and images together */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* The 'window' that hides the images outside the view */
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden; /* This hides the other images */
+    border-radius: 10px;
+}
+
+/* The long strip of images */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* This creates the SLIDE animation */
+}
+
+.carousel-images img {
+    width: 100%; /* Each image takes up the full width of the viewport */
+    flex-shrink: 0;
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #E5243B; /* This is the official SDG 1 Red color */
+}
+
+/* Button Styling */
+.prev, .next {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+}
+
+.prev { left: -50px; }
+.next { right: -50px; }
+
+
+/* Carousel Buttons */
+.prev,
+.next {
+    font-size: 2.2rem;
+    background-color: #ef5350; /* Light Red */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: #c62828;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    background-color: #c62828;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    .carousel {
+        flex-direction: row; /* 👈 KEEP arrows left & right */
+    }
+
+    .carousel img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
